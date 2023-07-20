@@ -27,11 +27,4 @@ services:
       - "83:80"
     deploy:
       replicas: 3
-   movies:
-    image: khadarbasha019/paytmrepomovies:latest
-    ports:
-      - "89:80"
-    deploy:
-      replicas: 3
-
  
