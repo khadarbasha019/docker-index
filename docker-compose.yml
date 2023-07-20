@@ -1,29 +1,32 @@
 version: '3'
 services:
-  movies:
-    image: rahamshaik/moviesrepopaytm:latest
+    train:
+    image: khadarbasha019/paytmrepotrain:latest
     ports:
-      - "80:80"
+      - "86:80"
+    deploy:
+      replicas: 3
+    
+ recharge:
+    image: khadarbasha019/paytmreporecharge:latest
+    ports:
+      - "87:80"
+    deploy:
+      replicas: 3
+      
+      dth:
+    image: khadarbasha019/paytmrepodth:latest
+    ports:
+      - "88:80"
     deploy:
       replicas: 3
 
-  train:
-    image: rahamshaik/trainrepopaytm:latest
+
+   movies:
+    image: khadarbasha019/paytmrepomovies:latest
     ports:
-      - "81:80"
+      - "89:80"
     deploy:
       replicas: 3
 
-  dth:
-    image: rahamshaik/dthrepopaytm:latest
-    ports:
-      - "82:80"
-    deploy:
-      replicas: 3
-
-  recharge:
-    image: rahamshaik/rechargerepopaytm:latest
-    ports:
-      - "83:80"
-    deploy:
-      replicas: 3
+ 
